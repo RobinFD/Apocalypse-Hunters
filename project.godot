@@ -19,6 +19,10 @@ config/name="Apocalypse Hunters"
 run/main_scene="res://Level.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+JsonData="*res://JSONData.gd"
+
 [input]
 
 left_click={

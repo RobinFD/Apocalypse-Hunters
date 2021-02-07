@@ -32,7 +32,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 } ]
 0/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="PlayingField" type="Node2D"]
 
 [node name="PlaceholderBackground" type="Sprite" parent="."]
 position = Vector2( 515.486, 438.546 )
@@ -52,4 +52,6 @@ format = 1
 tile_data = PoolIntArray( 65543, 0, 0, 65544, 0, 0 )
 
 [node name="Inventory" parent="." instance=ExtResource( 5 )]
-position = Vector2( 425, 187 )
+position = Vector2( 441, 178 )
+z_index = 999
+z_as_relative = false

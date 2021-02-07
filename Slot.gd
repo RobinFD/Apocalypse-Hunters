@@ -1,7 +1,7 @@
 extends Panel
 
-var default_texture = preload("res://Assets/UI bits/inventoryitem.png")
-var empty_texture = preload("res://Assets/UI bits/equipmentitem.png")
+var default_texture = preload("res://Assets/UIbits/inventoryitem.png")
+var empty_texture = preload("res://Assets/UIbits/equipmentitem.png")
 
 var default_style: StyleBoxTexture = null
 var empty_style: StyleBoxTexture = null

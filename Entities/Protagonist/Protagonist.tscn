@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Assets/Character Sprites/Robot/PNG/Poses/character_robot_idle.png" type="Texture" id=1]
+[ext_resource path="res://Assets/CharacterSprites/Robot/PNG/Poses/character_robot_idle.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Protagonist/Protagonist.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Sounds/Spell Sounds/HOT_MAGIC_SPELL_THROW_Fast_Fire_or_Lava_Whoosh_01_003703.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sounds/SpellSounds/HOT_MAGIC_SPELL_THROW_Fast_Fire_or_Lava_Whoosh_01_003703.wav" type="AudioStream" id=3]
+
+
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 27.0
