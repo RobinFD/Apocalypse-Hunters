@@ -3,8 +3,9 @@
 [ext_resource path="res://Assets/AttackSprites/fireball_sprite.png" type="Texture" id=1]
 [ext_resource path="res://Entities/Skills/Bolt.gd" type="Script" id=2]
 
-
 [node name="Bolt" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 12
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )

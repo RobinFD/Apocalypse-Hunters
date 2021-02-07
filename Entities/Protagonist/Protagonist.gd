@@ -56,4 +56,10 @@ func _skill_loop():
 		yield(get_tree().create_timer(rate_of_fire), "timeout")
 		can_fire = true
 		shooting = false
+		
 
+
+func _on_PickupZone_item_collected(item):
+	$CanvasLayer/Inventory.add_item(item) # Add this function to the inventory when you come back.
+	# Bren thinks we'll probably need to make the items able to generate via name rather than randomly
+	# before we can get add item to work.
