@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Attack Sprites/fireball_sprite.png" type="Texture" id=1]
+[ext_resource path="res://Entities/Skills/Bolt.gd" type="Script" id=2]
+
+[node name="Bolt" type="RigidBody2D"]
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -0.0479279, -8.58112, 13.3306, -3.82429, 13.6279, 3.60825, -0.34523, 8.06778 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.0503812, 0.0491366 )
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Bolt_body_entered"]

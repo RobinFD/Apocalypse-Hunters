@@ -1,0 +1,21 @@
+{
+   "Metal Chunk": {
+     "ItemCategory": "Resource",
+     "StackSize": 100,
+     "Description": "Looks like a shield. Certainly isn't."
+   },
+   "Jitter Juice": {
+     "ItemCategory": "Consumable",
+     "AddHealth": 50,
+     "AddEnergy": 100,
+     "StackSize": 100,
+     "Description": "It's just coffee, but we like to call things magical sounding names here."
+   },
+   "Mallet": {
+     "ItemCategory": "Hammer",
+     "ItemAttack": 10,
+     "ItemSpeed": 1.25,
+     "StackSize": 1,
+     "Description": "Good for flattening out robots."
+   }
+}
