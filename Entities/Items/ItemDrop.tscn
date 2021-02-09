@@ -3,6 +3,7 @@
 [ext_resource path="res://Entities/Items/Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Items/ItemDrop.gd" type="Script" id=2]
 [ext_resource path="res://Assets/ParticleSprites/random_selection.png" type="Texture" id=3]
+[ext_resource path="res://Assets/ParticleMaterials/RareItemParticle.tres" type="Material" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 16, 16 )
@@ -13,20 +14,11 @@ length = 2.0
 loop = true
 
 [sub_resource type="CanvasItemMaterial" id=3]
+blend_mode = 1
 particles_animation = true
 particles_anim_h_frames = 3
 particles_anim_v_frames = 1
 particles_anim_loop = true
-
-[sub_resource type="ParticlesMaterial" id=4]
-flag_disable_z = true
-gravity = Vector3( 0, 0, 0 )
-angular_velocity = 5.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
-scale = 0.5
-scale_random = 0.25
 
 [node name="ItemDrop" type="KinematicBody2D"]
 collision_layer = 2
@@ -51,12 +43,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BasicParticle" type="Particles2D" parent="."]
+[node name="RarityParticle" type="Particles2D" parent="."]
 material = SubResource( 3 )
 position = Vector2( 16, 16 )
-amount = 3
+amount = 10
 lifetime = 10.0
-process_material = SubResource( 4 )
+preprocess = 5.0
+explosiveness = 0.25
+process_material = ExtResource( 4 )
 texture = ExtResource( 3 )
 
 [node name="ItemDisplay" type="Node2D" parent="."]

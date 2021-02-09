@@ -2,11 +2,17 @@ extends KinematicBody2D
 tool
 
 signal collect_item(this_item)
-
 var item setget set_item
 
 func _ready():
 	item = $ItemDisplay/Item
+	match item.item_rarity:
+		"Basic":
+			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/BasicItemParticle.tres")
+		"Rare":
+			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/RareItemParticle.tres")
+		var unknown_rarity:
+			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/BasicItemParticle.tres")
 
 
 func _on_Button_pressed():
