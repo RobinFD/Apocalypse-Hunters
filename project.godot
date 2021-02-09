@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-JsonData="*res://JSONData.gd"
+JsonData="*res://Entities/Items/JSONData.gd"
 
 [input]
 

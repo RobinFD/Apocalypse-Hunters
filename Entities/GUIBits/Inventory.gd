@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const SlotClass = preload("res://Slot.gd")
+const SlotClass = preload("res://Entities/GUIBits/Slot.gd")
 onready var inventory_slots = $GridContainer
 var holding_item = null
 
@@ -16,16 +16,16 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 			if holding_item != null:
 				#Empty slot
 				if !slot.item:
-					slot._put_into_slot(holding_item)
+					slot.put_into_slot(holding_item)
 					holding_item = null
 				# Slot already contains an item
 				else:
 					#Different item, so swap
 					if holding_item.item_name != slot.item.item_name:
 						var temp_item = slot.item
-						slot._pick_from_slot()
+						slot.pick_from_slot()
 						temp_item.global_position = event.global_position
-						slot._put_into_slot(holding_item)
+						slot.put_into_slot(holding_item)
 						holding_item = temp_item
 					#Same item, so try to merge
 					else:
@@ -41,9 +41,15 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 			# Not holding an item
 			elif slot.item:
 				holding_item = slot.item
-				slot._pick_from_slot()
+				slot.pick_from_slot()
 				holding_item.global_position = get_global_mouse_position()
 
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
+
+func add_item(item):
+	for current_inv_slot in inventory_slots.get_children():
+		if !current_inv_slot.item:
+			current_inv_slot.item = item
+			return

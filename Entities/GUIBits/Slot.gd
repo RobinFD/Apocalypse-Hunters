@@ -6,8 +6,8 @@ var empty_texture = preload("res://Assets/UIbits/equipmentitem.png")
 var default_style: StyleBoxTexture = null
 var empty_style: StyleBoxTexture = null
 
-var ItemClass = preload("res://Item.tscn")
-var item = null
+var ItemClass = preload("res://Entities/Items/Item.tscn")
+var item = null setget put_into_slot
 
 func _ready():
 	default_style = StyleBoxTexture.new()
@@ -26,14 +26,14 @@ func _refresh_style():
 	else:
 		set('custom_styles/panel', default_style)
 
-func _pick_from_slot():
+func pick_from_slot():
 	remove_child(item)
 	var inventoryNode = find_parent("Inventory")
 	inventoryNode.add_child(item)
 	item = null
 	_refresh_style()
 
-func _put_into_slot(new_item):
+func put_into_slot(new_item):
 	item = new_item
 	item.position = Vector2(0, 0)
 	var inventoryNode = find_parent("Inventory")
