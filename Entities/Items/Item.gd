@@ -1,4 +1,5 @@
 extends Node2D
+tool
 
 var item_name = "Metal Chunk" setget set_item 
 var item_quantity

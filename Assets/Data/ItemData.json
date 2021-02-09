@@ -1,11 +1,13 @@
 {
    "Metal Chunk": {
      "ItemCategory": "Resource",
+	 "ItemRarity": "Basic",
      "StackSize": 100,
      "Description": "Looks like a shield. Certainly isn't."
    },
    "Jitter Juice": {
      "ItemCategory": "Consumable",
+	 "ItemRarity": "Rare",
      "AddHealth": 50,
      "AddEnergy": 100,
      "StackSize": 100,
@@ -13,6 +15,7 @@
    },
    "Mallet": {
      "ItemCategory": "Hammer",
+	 "ItemRarity": "Legendary",
      "ItemAttack": 10,
      "ItemSpeed": 1.25,
      "StackSize": 1,

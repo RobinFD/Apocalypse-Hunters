@@ -1,4 +1,5 @@
 extends KinematicBody2D
+tool
 
 signal collect_item(this_item)
 
