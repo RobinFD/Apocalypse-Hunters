@@ -14,6 +14,8 @@ func _ready():
 			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/BasicItemParticle.tres")
 		"Rare":
 			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/RareItemParticle.tres")
+		"Legendary":
+			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/LegendaryItemParticle.tres")
 		var unknown_rarity:
 			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/BasicItemParticle.tres")
 

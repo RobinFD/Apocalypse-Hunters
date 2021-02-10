@@ -1,4 +1,10 @@
 {
+	"Unknown": {
+     "ItemCategory": "Resource",
+	 "ItemRarity": "Basic",
+     "StackSize": 1,
+     "Description": "You shouldn't be able to see this."
+   },
    "Metal Chunk": {
      "ItemCategory": "Resource",
 	 "ItemRarity": "Basic",
