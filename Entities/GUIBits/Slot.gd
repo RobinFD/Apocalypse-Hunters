@@ -15,8 +15,8 @@ func _ready():
 	default_style.texture = default_texture
 	empty_style.texture = empty_texture
 	
-	if randi() % 2 == 0:
-#	if true:
+#	if randi() % 2 == 0:
+	if false:
 		item = ItemClass.instance()
 		add_child(item)
 	_refresh_style()

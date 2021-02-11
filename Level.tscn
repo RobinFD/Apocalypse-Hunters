@@ -50,10 +50,12 @@ position = Vector2( 842, 272 )
 [node name="ItemDrop" parent="." instance=ExtResource( 7 )]
 position = Vector2( 606, 409 )
 item_id = "Mallet"
+item_quantity = "1"
 
 [node name="ItemDrop2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 286, 551 )
 item_id = "Jitter Juice"
+item_quantity = "5"
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )

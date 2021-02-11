@@ -4,11 +4,13 @@ tool
 signal collect_item(this_item)
 
 export(String) var item_id
+export(int) var item_quantity
 var item setget set_item
 
 func _ready():
 	item = $ItemDisplay/Item
 	item.item_name = item_id
+#	item.stack_size = item_quantity
 	match item.item_rarity:
 		"Basic":
 			$RarityParticle.process_material = load("res://Assets/ParticleMaterials/BasicItemParticle.tres")

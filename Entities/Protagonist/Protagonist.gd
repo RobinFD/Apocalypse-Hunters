@@ -14,6 +14,8 @@ var can_fire = true
 var rate_of_fire = 0.4
 var shooting = false
 
+var items_being_collected = []
+
 
 
 #This thing makes it so if I click a menu the protag won't get overzealous and dive to the spot underneath it
@@ -25,6 +27,7 @@ func _unhandled_input(event):
 func _process(delta):
 	_movement(delta)
 	_skill_loop()
+	move_item_to_player(delta)
 
 #Makes us go by doing all the crunchy bits
 func _movement(delta):
@@ -56,14 +59,21 @@ func _skill_loop():
 		yield(get_tree().create_timer(rate_of_fire), "timeout")
 		can_fire = true
 		shooting = false
-		
 
 
 func _on_PickupZone_item_collected(item_drop):
 	if $CanvasLayer/Inventory.has_free_space():
+		items_being_collected.append(item_drop)
+
+func add_item_to_iventory(item_drop):
+	if $CanvasLayer/Inventory.has_free_space():
 		var temp_item = item_drop.item
 		item_drop.item = null
 		$CanvasLayer/Inventory.add_item(temp_item)
-	 # Add this function to the inventory when you come back.
-	# Bren thinks we'll probably need to make the items able to generate via name rather than randomly
-	# before we can get add item to work.
+
+func move_item_to_player(delta):
+	for item_drop in items_being_collected:
+		item_drop.position = lerp(item_drop.position, position, 25 * delta)
+		if (item_drop.position - position).length() < 10:
+			add_item_to_iventory(item_drop)
+			items_being_collected.erase(item_drop)
