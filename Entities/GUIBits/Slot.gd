@@ -16,6 +16,7 @@ func _ready():
 	empty_style.texture = empty_texture
 	
 	if randi() % 2 == 0:
+#	if true:
 		item = ItemClass.instance()
 		add_child(item)
 	_refresh_style()

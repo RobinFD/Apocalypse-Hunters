@@ -62,6 +62,10 @@ func _skill_loop():
 func _on_PickupZone_item_collected(item_drop):
 	var temp_item = item_drop.item
 	item_drop.item = null
-	$CanvasLayer/Inventory.add_item(temp_item) # Add this function to the inventory when you come back.
+	if $CanvasLayer/Inventory.add_item(temp_item):
+		item_drop.queue_free()
+	else:
+		item_drop.item = temp_item
+	 # Add this function to the inventory when you come back.
 	# Bren thinks we'll probably need to make the items able to generate via name rather than randomly
 	# before we can get add item to work.

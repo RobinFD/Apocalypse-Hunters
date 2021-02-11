@@ -5,8 +5,6 @@
 [ext_resource path="res://Assets/UIbits/inventoryitem.png" type="Texture" id=3]
 [ext_resource path="res://Entities/GUIBits/Inventory.gd" type="Script" id=4]
 
-
-
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 34, 34 )

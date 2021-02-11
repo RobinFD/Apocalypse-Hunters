@@ -28,5 +28,3 @@ func set_item(value):
 	if value:
 		$ItemDisplay.add_child(value)
 		item = value
-	else:
-		queue_free()

@@ -48,8 +48,9 @@ func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
 
-func add_item(item):
+func add_item(item) -> bool:
 	for current_inv_slot in inventory_slots.get_children():
 		if !current_inv_slot.item:
 			current_inv_slot.item = item
-			return
+			return true
+	return false

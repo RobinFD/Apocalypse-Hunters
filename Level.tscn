@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Entities/Protagonist/Protagonist.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Entities/Enemies/Mook/Mook.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/PlaceholderBackground.png" type="Texture" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://Entities/Protagonist/Camera2D.gd" type="Script" id=5]
 [ext_resource path="res://Entities/Items/ItemDrop.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -46,12 +47,12 @@ collision_mask = 13
 [node name="Mook" parent="." instance=ExtResource( 2 )]
 position = Vector2( 842, 272 )
 
-[node name="ItemDrop" parent="Mook" instance=ExtResource( 7 )]
-position = Vector2( -236, 137 )
+[node name="ItemDrop" parent="." instance=ExtResource( 7 )]
+position = Vector2( 606, 409 )
 item_id = "Mallet"
 
-[node name="ItemDrop2" parent="Mook" instance=ExtResource( 7 )]
-position = Vector2( -556, 279 )
+[node name="ItemDrop2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 286, 551 )
 item_id = "Jitter Juice"
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -60,3 +61,8 @@ collision_layer = 4
 collision_mask = 0
 format = 1
 tile_data = PoolIntArray( 65543, 0, 0, 65544, 0, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 5 )
+target = NodePath("../Protagonist")
