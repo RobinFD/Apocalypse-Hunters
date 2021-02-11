@@ -54,3 +54,9 @@ func add_item(item) -> bool:
 			current_inv_slot.item = item
 			return true
 	return false
+	
+func has_free_space() -> bool:
+	for current_inv_slot in inventory_slots.get_children():
+		if !current_inv_slot.item:
+			return true
+	return false
